@@ -1,0 +1,16 @@
+/build/
+.git
+.dart_tool/
+.flutter-plugins-dependencies
+.packages
+.flutter-plugins
+.idea/
+
+
+
+
+.dart_tool/package_config_subset
+.dart_tool/version
+.flutter-plugins
+.packages
+.dart_tool/package_config_subset
