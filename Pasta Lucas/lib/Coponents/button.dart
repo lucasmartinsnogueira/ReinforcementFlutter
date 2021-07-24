@@ -2,21 +2,29 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-class CustomButtom extends StatelessWidget {
-  const CustomButtom({Key? key}) : super(key: key);
+class CustomButtom extends StatefulWidget {
+  final Function()? onPressed;
+
+  CustomButtom({
+    Key? key,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
+  _CustomFormFieldState createState() => _CustomFormFieldState();
+}
+
+class _CustomFormFieldState extends State<CustomButtom> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 70,
-      child: RaisedButton(
-        color: Colors.green,
-        onPressed: () {},
-        child: Text(
-          "Validar Campos",
-          style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0),
-        ),
-      ),
+    return RaisedButton(
+      color: Colors.orange,
+      onPressed: widget.onPressed,
+      child: Center(
+          child: Text(
+        "Validar",
+        style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0),
+      )),
     );
   }
 }
